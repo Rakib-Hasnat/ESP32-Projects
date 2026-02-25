@@ -1,0 +1,21 @@
+## gpio_config_t io_conf;
+This is a structure (struct) defined inside ESP-IDF.
+
+it like a form where we should fill in the information and give it to the ESP32:
+
+Which pin?
+Input or output?
+Pull-up or pull-down?
+Interrupt or not?
+
+for the selecting the GPIO
+
+1 in binary (64-bit): 0000...0001 (bit 0 is set) ULL is a Unsigned Long Long (64-bit number)
+Shift left by 23:     0000...0010 0000 0000 0000 0000 0000 (bit 23 is set)
+
+So, our GPIO is fixed now we dont need any thing from this structure so we keep them in DISABLE state.
+
+
+
+gpio_config(&io_conf);
+this sends the configuration to hardware.
